@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle2024.MainPage"
+             BackgroundColor="MediumPurple"
+             >
+
+    <StackLayout WidthRequest="300" HorizontalOptions="Center" >
+
+        <Label
+            Text="Wordle"
+            FontAttributes="Bold"
+            FontSize="50"
+            FontFamily="San Francisco"
+            HorizontalOptions="Center"
+            
+            />
+        <Label
+           Text="Login:"
+           FontAttributes="Bold"
+           FontSize="20"
+           FontFamily="San Francisco"
+           HorizontalOptions="Center"
+           />
+
+        <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="200" HeightRequest="100">
+            <Entry x:Name="userNameEntry" Placeholder="UserName"  Margin="0,20,0,20"/>
+            <Entry x:Name="passWordEntry" Placeholder="Password"  Margin="0,0,0,20" />
+            <Button x:Name="enterButton" Text="Enter" Clicked="onEnterButtonClicked"  Margin="0,0,0,10" BackgroundColor="Black" TextColor="White"/>
+        </VerticalStackLayout> 
+      
+        
+
+    </StackLayout>
+
+</ContentPage>

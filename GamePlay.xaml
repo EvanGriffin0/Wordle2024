@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle2024.GamePlay"
+             BackgroundColor="white"
+             >
+
+    <StackLayout WidthRequest="400" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" >
+        <!-- Grid for Displaying Attempts -->
+
+        <Label
+            x:Name="header"
+            Text="Wordle"
+            HorizontalOptions="Center"
+            FontSize="100"
+            TextColor="Black"
+            />
+        <Grid x:Name="attemptsGrid" ColumnSpacing="10" RowSpacing="10" HeightRequest="400" Margin="0,0,0,20"  >
+            <!-- Each row represents an attempted guess -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Each column represents a letter in the guess -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Placeholder data, you'll replace this with dynamic data in your code-behind -->
+            <Label x:Name="oneOne" Grid.Row="0" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="oneTwo" Grid.Row="0" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="oneThree" Grid.Row="0" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="oneFour" Grid.Row="0" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="oneFive" Grid.Row="0" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="twoOne" Grid.Row="1" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="twoTwo" Grid.Row="1" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="twoThree" Grid.Row="1" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="twoFour" Grid.Row="1" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="twoFive" Grid.Row="1" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="threeOne" Grid.Row="2" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="threeTwo" Grid.Row="2" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="threeThree" Grid.Row="2" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="threeFour" Grid.Row="2" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="threeFive" Grid.Row="2" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="fourOne"  Grid.Row="3" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fourTwo" Grid.Row="3" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fourThree" Grid.Row="3" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fourFour" Grid.Row="3" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fourFive" Grid.Row="3" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="fiveOne" Grid.Row="4" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fiveTwo" Grid.Row="4" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fiveThree" Grid.Row="4" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fiveFour" Grid.Row="4" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="fiveFive" Grid.Row="4" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+            <Label x:Name="sixOne" Grid.Row="5" Grid.Column="0" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="sixTwo" Grid.Row="5" Grid.Column="1" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="sixThree" Grid.Row="5" Grid.Column="2" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="sixFour" Grid.Row="5" Grid.Column="3" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="sixFive" Grid.Row="5" Grid.Column="4" Text="" BackgroundColor="black" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            
+            <!-- Add more rows as needed -->
+        </Grid>
+
+        <!-- Grid for User's Current Guess -->
+        <Grid x:Name="userGuessGrid" ColumnSpacing="10" RowSpacing="10" Margin="0,0,0,20" HeightRequest="50">
+            <!-- One row for the user's current guess -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Each column represents a letter in the user's guess -->
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Placeholder data, you'll replace this with dynamic data in your code-behind -->
+            <Label x:Name="userGuessLetter1" Grid.Row="0" Grid.Column="0" Text="G" BackgroundColor="black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="userGuessLetter2" Grid.Row="0" Grid.Column="1" Text="U" BackgroundColor="black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="userGuessLetter3" Grid.Row="0" Grid.Column="2" Text="E" BackgroundColor="black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="userGuessLetter4" Grid.Row="0" Grid.Column="3" Text="S" BackgroundColor="black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            <Label x:Name="userGuessLetter5" Grid.Row="0" Grid.Column="4" Text="S" BackgroundColor="black"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+            
+            
+        </Grid>
+
+        <!-- Grid for On-Screen Keyboard -->
+        <Grid x:Name="keyboardGrid" WidthRequest="400" HeightRequest="100" ColumnSpacing="0" RowSpacing="0" >
+            <!-- Three rows for the on-screen keyboard -->
+            <Grid.RowDefinitions  >
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Ten columns for the on-screen keyboard -->
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+
+            </Grid.ColumnDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Text="     A" BackgroundColor="black"  HorizontalOptions="Center" VerticalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="a" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="1" Text="     B" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="b" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="2" Text="     C" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="c" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="3" Text="     D" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="d" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="4" Text="     E" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="e" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="5" Text="     F" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="f" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="6" Text="     G" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="g" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="7" Text ="     H" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="h" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="8" Text="     I" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="i" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="0" Grid.Column="9" Text="     J" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="j" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Grid.Row="1" Grid.Column="0" Text="     K" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="k" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="1" Text="     L" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="l" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="2" Text="     M" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="m" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="3" Text="     N" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="n" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="4" Text="     O" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="o" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="5" Text="     P" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="P" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="6" Text="     Q" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="q" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="7" Text="     R" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="r" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="8" Text="     S" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="s" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="1" Grid.Column="9" Text="     T" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="t" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <Label Grid.Row="2" Grid.Column="0" Text="     U" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="u" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="1" Text="     V" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="v" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="2" Text="     W" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="w" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="3" Text="     X" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="x" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="4" Text="     Y" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="y" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="5" Text="     Z" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="black" >
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnKeyTapped" CommandParameter="z" />
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+        <HorizontalStackLayout WidthRequest="400" HeightRequest="50" HorizontalOptions="Center" VerticalOptions="Center">
+            <Button x:Name="toSettings" Text="⚙️" BackgroundColor="Black" Clicked="settingsPage"/>
+            <Button x:Name="Enter" Text="Enter" WidthRequest="180" Margin="0,0,0,0" Clicked="enterButtonClicked" BackgroundColor="Black" TextColor="white" HorizontalOptions="Start"/>
+
+            <Button x:Name="BackSpace" Text="Backspace" WidthRequest="180" Margin="5,0,10,0" Clicked="backButtonClicked" BackgroundColor="black" TextColor="white" HorizontalOptions="End" />
+        </HorizontalStackLayout>
+        <Button x:Name="toHome" Text="exit" WidthRequest="180" Margin="0,0,20,0" Clicked="homeButtonClicked" BackgroundColor="Yellow"  HorizontalOptions="Center" TextColor="black" />
+
+    </StackLayout>
+    
+    
+</ContentPage>

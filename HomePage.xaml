@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle2024.HomePage"
+             Title="HomePage"
+             BackgroundColor="MediumPurple"
+             >
+    
+    
+    
+    <VerticalStackLayout WidthRequest="300" HorizontalOptions="Center" >
+        
+        <Label 
+            Text="Wordle"
+            FontFamily="San Francisco"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+            FontSize="80"
+            Margin="0,0,0,20"
+            />
+
+        
+        <Button 
+            WidthRequest="300"
+            HeightRequest="100"
+            Text="Play Game"
+            FontSize="50"
+            FontFamily="San Francisco"
+            Margin="0,0,0,20"
+            BackgroundColor="white"           
+            Clicked="NewGame_Button_Clicked"
+            />
+        
+
+        <Button 
+            WidthRequest="300"
+            HeightRequest="100"
+            Text="Rules"
+            FontSize="50"
+            FontFamily="San Francisco"   
+            Margin="0,0,0,20"
+            BackgroundColor="white"       
+            Clicked="Settings_Button_Clicked"
+            />
+
+    </VerticalStackLayout>
+</ContentPage>
